@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poorvik Gowda K P's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --accent-color: #00796b;
+            --dark-background: #e0e0e0;
+        }
+
+        body {
+            background: #f4f4f9;
+            color: #333333;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #333333;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 100px 60px 60px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .hero-text h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 35px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text span {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #00695c;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f0f0f0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            animation: slideInRight 1s ease-out forwards, floatImage 4s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #about h2,
+        #skills h2,
+        #contact h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.4s; }
+        .delay-2 { animation-delay: 0.7s; }
+        .delay-3 { animation-delay: 1.0s; }
+
+        #about p {
+            max-width: 600px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .skills-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            padding: 8px 14px;
+            background: var(--dark-background);
+            display: inline-block;
+            border-radius: 20px;
+            margin-right: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skills-list li:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 121, 107, 0.3);
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info strong {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #666666;
+            background: #e8e8e8;
+            margin-top: 40px;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+                flex-direction: column;
+            }
+
+            header h1 {
+                margin-bottom: 10px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 140px;
+                justify-content: center;
+            }
+
+            .hero-text {
+                margin-bottom: 30px;
+                animation: fadeInUp 1s ease-out forwards;
+            }
+            
+            .hero-image {
+                margin-bottom: 40px;
+                width: 200px;
+                height: 200px;
+                animation: fadeInDown 1s ease-out forwards;
+            }
+            
+            @keyframes fadeInDown {
+                 from { opacity: 0; transform: translateY(-40px); }
+                 to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Poorvik Gowda K P's Portfolio</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h2>Hi, it's me</h2>
+        <h1><span>Poorvik Gowda K P</span><br></h1>
+        <p>I love building clean and responsive websites using simple HTML, CSS and JavaScript.</p>
+        <a href="Resume.pdf" class="btn" download>📄 Download Resume</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="1000232914.jpg" alt="Poorvik Gowda K P Photo">
+    </div>
+</section>
+
+<section id="about" class="fade-in-up delay-1">
+    <h2>About</h2>
+    <p>
+        I am a web development enthusiast who enjoys turning ideas into real web pages.
+        I focus on writing simple and clean code and I am always eager to learn new technologies
+        and improve my existing skills.
+    </p>
+</section>
+
+<section id="skills" class="fade-in-up delay-2">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Git &amp; GitHub</li>
+        <li>Basic C / Java</li>
+    </ul>
+</section>
+
+<section id="contact" class="fade-in-up delay-3">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <p><strong>Email:</strong> poorvikgowda.kp@example.com</p>
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Location:</strong> Karnataka, India</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Poorvik Gowda K P. All rights reserved.
+</footer>
+
+</body>
+</html>
